@@ -20,6 +20,20 @@ int main()
 }
 int NumberOfRoots(double a, double b, double c, double* x1, double* x2)
 {
+  assert(x1);
+  assert(x2);
+  assert(x1 != x2);
   
+  if ((a == 0) && (b == 0) && (c == 0))
+    NumberOfRoots = INFINITE_ROOTS;
+  else
+    if (a == 0)
+      NumberOfRoots = 1;
+  if (b*b - 4*a*c > 0)
+    NumberOfRoots = 2;
+  if (b*b - 4*a*c == 0)
+    NumberOfRoots = 1;
+  if (b*b - 4*a*c < 0)
+    NumberOfRoots = 0;
 }
 
